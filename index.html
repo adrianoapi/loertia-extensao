@@ -1,0 +1,96 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <link type="text/css" rel="stylesheet" href="css/styles.css" />
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+        <script src="js/jquery-1.7.2.min.js"></script>
+        <script src="js/application.js"></script>
+    </head>
+    <body>
+
+<section class="container">
+    <div class="dropdown " style="width:100%;">
+    <select name="one" class="dropdown-select">
+      <option value="">Selecione uma loteria</option>
+      <option value="2">Lotofacil</option>
+      <option value="3">Lotomania</option>
+      <option value="1">Megasena</option>
+      <option value="3">Quina</option>
+    </select>
+  </div>
+</section>
+
+        <div id="loterias-widget">
+            <div class="container">			
+                <div class="row">
+                    <div id="header">
+                        <center><img src="img/mega-sena.png"></center>
+                    </div>						
+                </div>
+            </div>
+            <hr>
+            <div class="container">	
+                <div id="sorteio" >
+                    <div id="data">
+                        <p style="font-weight: bold;font-size: 13px; font-family: verdana;">DATA SORTEIO</p>
+                        <p id="data-sorteio" style="line-height: 0em;"></p>
+                    </div>
+                    <div id="num_conc" style="float: right; width: 150px;">
+                        <p style="font-weight: bold;font-size: 13px; font-family: verdana;">Nº CONCURSO</p>
+                        <p id="numero-concurso" style="line-height: 0em;"></p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="container">
+                <div id="numeros">
+                    <ul class="example-mega">
+                        <li class="example-item example-megasena zoom">01</li>
+                        <li class="example-item example-megasena zoom">99</li>
+                        <li class="example-item example-megasena zoom">50</li>
+                        <li class="example-item example-megasena zoom">01</li>
+                        <li class="example-item example-megasena zoom">99</li>
+                        <li class="example-item example-megasena zoom">50</li>
+                    </ul>
+                </div>			
+            </div>			
+            <hr>
+            <div class="container">	
+                <div id="sorteio">
+                    <div id="primeira">
+                        <p style="font-weight: bold;font-size: 13px; font-family: verdana;">PONTOS</p>
+                        <p id="resultado">6</p>
+                        <p id="resultado">5</p>
+                        <p id="resultado">4</p>
+                    </div>	
+                    
+                    <div id="segunda">
+                        <p style="font-weight: bold;font-size: 13px; font-family: verdana;">GANHADORES</p>
+                        <p id="resultado">2</p>
+                        <p id="resultado">1</p>
+                        <p id="resultado">0</p>
+                    </div>
+                    
+                    <div id="terceira">
+                        <p style="font-weight: bold;font-size: 13px; font-family: verdana;">PRÊMIO</p>
+                        <p id="resultado">255.555,55</p>
+                        <p id="resultado">44.555</p>
+                        <p id="resultado">125,68</p>
+                    </div>										
+                </div>
+            </div>
+            <hr>
+            <div id="sorteio" >
+                <div id="data">
+                    <a href="#" class="btn btn-blue"><< ANTERIOR</a>
+                </div>
+                
+                <div id="num_conc" style="float: right;">
+                    <a href="#" class="btn btn-blue">PRÓXIMO >></a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
