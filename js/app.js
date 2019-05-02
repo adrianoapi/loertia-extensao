@@ -1,6 +1,46 @@
-var sistemaMdg = "http://www.maniadeganhar.com.br/api/ultimo-resultado";
-var jogo = "2";
-var jogo_id = "2146";
+
+/**
+* Declara a principal classe da API
+* com todos os atributos "privados";
+**/
+var app = {                        /////////////////////////////////
+	_jogo: 0,                      // integer                     //
+	_jogo_id: 0,                   // integer                     //
+	_data_sorteio: '',             // date                        //
+	_url: '',                      // string                      //
+	get jogo() {				   /////////////////////////////////
+		return this._jogo;
+	},
+	set jogo(value) {
+		this._jogo = value;
+	},
+	get jogo_id() {
+		return this._jogo_id;
+	},
+	set jogo_id(value) {
+		this._jogo_id = value;
+	},
+	get data_sorteio() {
+		return this._data_sorteio;
+	},
+	set data_sorteio(value) {
+		var data = value.split('-');
+		this._data_sorteio = data[2]+"/"+data[1]+"/"+data[0];
+	},
+	get url() {
+		return this._url;
+	},
+	set url(value) {
+		this._url = value;
+	}
+};
+
+console.log(app._url);
+
+app.url = "http://www.maniadeganhar.com.br/api/ultimo-resultado";
+app.jogo = 2;
+app.jogo_id = 2146;
+
 
 submitArticle();
 function submitArticle() {
@@ -23,9 +63,8 @@ function submitArticle() {
         return xhr;
     }
 
-    var data = "jogo=" + jogo + "&jogo_id=" + jogo_id;
-    var url = sistemaMdg;
-    xhr.open('POST', url, true);
+    var data = "jogo=" + app.jogo + "&jogo_id=" + 2;
+    xhr.open('POST', app.url, true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send(data);
     xhr.onreadystatechange = function () {
@@ -46,10 +85,12 @@ function submitArticle() {
 
 var ultimo_concurso = null;
 
-function alimentSorteio(array)
-{
+function alimentSorteio(array) {
+
+    app.data_sorteio = array['data_sorteio'];
+
     document.getElementById('numero-concurso').innerHTML = array['concurso'];
-    document.getElementById('data-sorteio'   ).innerHTML = converteData(array['data_sorteio']);
+    document.getElementById('data-sorteio'   ).innerHTML = app.data_sorteio;
     var arrNumeros  = converteArray(array['numeros']);
     ultimo_concurso = array['concurso'];
     
