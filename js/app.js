@@ -3,12 +3,12 @@
 * Declara a principal classe da API
 * com todos os atributos "privados";
 **/
-var app = {                        /////////////////////////////////
-	_jogo: 0,                      // integer                     //
-	_jogo_id: 0,                   // integer                     //
-	_data_sorteio: '',             // date                        //
-	_url: '',                      // string                      //
-	get jogo() {				   /////////////////////////////////
+var app = {
+	_jogo: 0,
+	_jogo_id: 0,
+	_data_sorteio: '',
+	_url: '',
+	get jogo() {
 		return this._jogo;
 	},
 	set jogo(value) {
@@ -34,8 +34,6 @@ var app = {                        /////////////////////////////////
 		this._url = value;
 	}
 };
-
-console.log(app._url);
 
 app.url = "http://www.maniadeganhar.com.br/api/ultimo-resultado";
 app.jogo = 2;
@@ -87,9 +85,10 @@ var ultimo_concurso = null;
 
 function alimentSorteio(array) {
 
+    app.concurso     = array['concurso'    ];
     app.data_sorteio = array['data_sorteio'];
 
-    document.getElementById('numero-concurso').innerHTML = array['concurso'];
+    document.getElementById('numero-concurso').innerHTML = app.concurso;
     document.getElementById('data-sorteio'   ).innerHTML = app.data_sorteio;
     var arrNumeros  = converteArray(array['numeros']);
     ultimo_concurso = array['concurso'];
