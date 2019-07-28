@@ -60,44 +60,14 @@ function alimentSorteio(array) {
 
     document.getElementById('numero-concurso').innerHTML = app.concurso;
     document.getElementById('data-sorteio'   ).innerHTML = app.data_sorteio;
-    var arrNumeros  = converteArray(array['numeros']);
+    var arrNumeros  = app.converteArray(array['numeros']);
     ultimo_concurso = array['concurso'];
-    
+
     var htmlSpanNumeros = "";
     for(var i = 0; i < arrNumeros.length; i++){
         htmlSpanNumeros += '<li class="example-item example-megasena zoom">' + arrNumeros[i] + '</li>';
     }
-    
+
     htmlSpanNumeros = '<ul class="example-mega">' + htmlSpanNumeros + '</ul>';
     document.getElementById('dezenas').innerHTML = htmlSpanNumeros;
-}
-
-function converteArray(string)
-{
-    var patt = /[0-9]/g;
-    var array = string.match(patt);
-    var string = "";
-    var newArr = [];
-
-    var j = "";
-    for (var i = 0; i < array.length; i++) {
-        j += array[i];
-        if (j.length > 1) {
-            newArr.push(j);
-            j = "";
-        }
-    }
-    
-    return newArr;
-}
-
-function converteData(string)
-{
-    var data = string.split('-');
-    return data[2]+"/"+data[1]+"/"+data[0];
-}
-
-function createLink()
-{
-    
 }

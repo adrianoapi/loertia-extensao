@@ -32,5 +32,23 @@ var app = {
 	},
 	set url(value) {
 		this._url = value;
-	}
+	},
+        converteArray: function(string)
+        {
+            var patt = /[0-9]/g;
+            var array = string.match(patt);
+            var string = "";
+            var newArr = [];
+
+            var j = "";
+            for (var i = 0; i < array.length; i++) {
+                j += array[i];
+                if (j.length > 1) {
+                    newArr.push(j);
+                    j = "";
+                }
+            }
+
+            return newArr;
+        }
 };

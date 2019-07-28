@@ -9,5 +9,5 @@ var library = {
 	},
 	set requisicaoHttp(value) {
 		this._requisicaoHttp = 'hello minhas ' + value;
-	},
+        },
 };
