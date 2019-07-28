@@ -50,5 +50,23 @@ var app = {
             }
 
             return newArr;
+        },
+        alimentSorteio: function(array) {
+
+            app.concurso     = array['concurso'    ];
+            app.data_sorteio = array['data_sorteio'];
+
+            document.getElementById('numero-concurso').innerHTML = app.concurso;
+            document.getElementById('data-sorteio'   ).innerHTML = app.data_sorteio;
+            var arrNumeros  = app.converteArray(array['numeros']);
+            ultimo_concurso = array['concurso'];
+
+            var htmlSpanNumeros = "";
+            for(var i = 0; i < arrNumeros.length; i++){
+                htmlSpanNumeros += '<li class="example-item example-megasena zoom">' + arrNumeros[i] + '</li>';
+            }
+
+            htmlSpanNumeros = '<ul class="example-mega">' + htmlSpanNumeros + '</ul>';
+            document.getElementById('dezenas').innerHTML = htmlSpanNumeros;
         }
 };

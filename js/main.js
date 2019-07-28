@@ -10,8 +10,9 @@ app.jogo = 2;
 app.jogo_id = 2146;
 
 
-submitArticle();
-function submitArticle() {
+submitArticle(app.jogo);
+function submitArticle(value) {
+    console.log(value.valueOf());
     xhr = new ajaxValue();
     function ajaxValue() {
         try {
@@ -39,7 +40,7 @@ function submitArticle() {
         if (this.readyState === 4) {
             if (this.status === 200) {
                 objArray = JSON.parse(this.responseText);
-                alimentSorteio(objArray[0]);
+                app.alimentSorteio(objArray[0]);
             } else {
                 alert("status " + this.status);
             }
@@ -49,25 +50,4 @@ function submitArticle() {
         }
     }
     return false;
-}
-
-var ultimo_concurso = null;
-
-function alimentSorteio(array) {
-
-    app.concurso     = array['concurso'    ];
-    app.data_sorteio = array['data_sorteio'];
-
-    document.getElementById('numero-concurso').innerHTML = app.concurso;
-    document.getElementById('data-sorteio'   ).innerHTML = app.data_sorteio;
-    var arrNumeros  = app.converteArray(array['numeros']);
-    ultimo_concurso = array['concurso'];
-
-    var htmlSpanNumeros = "";
-    for(var i = 0; i < arrNumeros.length; i++){
-        htmlSpanNumeros += '<li class="example-item example-megasena zoom">' + arrNumeros[i] + '</li>';
-    }
-
-    htmlSpanNumeros = '<ul class="example-mega">' + htmlSpanNumeros + '</ul>';
-    document.getElementById('dezenas').innerHTML = htmlSpanNumeros;
 }
