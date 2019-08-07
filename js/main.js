@@ -3,12 +3,20 @@ app.url     = "http://www.maniadeganhar.com.br/api/ultimo-resultado";
 app.jogo    = 2;
 app.sorteio = 2146;
 
+document.getElementById("select-jogo").addEventListener("click", submitArticle);
 
 submitArticle();
 function submitArticle() {
-
+    
+    var e = document.getElementById("select-jogo");
+    var selectJogo = e.options[e.selectedIndex].value;
+    if(selectJogo <= 0){
+        selectJogo = 2;
+    }
+    
+    
     xhr = library.requisicaoHttp();
-    var data = "jogo=2&sorteio=" + 2;
+    var data = "jogo=" + selectJogo + "&sorteio=" + 2;
     xhr.open('POST', app.url, true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send(data);
