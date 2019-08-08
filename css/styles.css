@@ -175,6 +175,11 @@ a.btn.btn-red:active {
     border-color: rgba(0,0,0,0.9);
 }
 
+hr{
+    margin:  0px;
+    padding: 0px;
+}
+
 /* dropdown */
 .dropdown {
     display: inline-block;
