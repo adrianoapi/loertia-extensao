@@ -56,7 +56,8 @@ function submitArticle() {
                     return false;
                 }
                 
-                app.alimentSorteio(objArray[0]);
+                app.insertContent(objArray[0]);
+                resultado.insertContent(objArray[0]);
                 document.getElementById("flg").value = 0;
         
             } else {

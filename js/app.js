@@ -89,7 +89,7 @@ var app = {
 
             return newArr;
         },
-        alimentSorteio: function(array) {
+        insertContent: function(array) {
 
             app.concurso     = array['concurso'    ];
             app.data_sorteio = array['data_sorteio'];
