@@ -9,6 +9,7 @@ var app = {
 	_data_sorteio: '',
 	_url: '',
 	_jogo_imagem: '',
+	_jogo_cor: '',
 	get jogo() {
             return this._jogo;
 	},
@@ -52,6 +53,24 @@ var app = {
                     this._jogo_imagem = 'mega-sena.png';
             }
         },
+        get jogo_cor() {
+            return this._jogo_cor;
+        },
+        set jogo_cor(jogo){
+            switch(jogo) {
+                case '1':
+                    this._jogo_cor = 'roxo';
+                    break;
+                case '4':
+                    this._jogo_cor = 'azul';
+                    break;
+                case '3':
+                    this._jogo_cor = 'laranja';
+                    break;
+                default:
+                    this._jogo_cor = 'verde';
+            }
+        },
         converteArray: function(string)
         {
             var patt = /[0-9]/g;
@@ -84,7 +103,7 @@ var app = {
 
             var htmlSpanNumeros = "";
             for(var i = 0; i < arrNumeros.length; i++){
-                htmlSpanNumeros += '<li class="example-item example-megasena zoom">' + arrNumeros[i] + '</li>';
+                htmlSpanNumeros += '<li class="example-item example-megasena zoom zoom-' + app.jogo_cor + '">' + arrNumeros[i] + '</li>';
             }
 
             htmlSpanNumeros = '<ul class="example-mega">' + htmlSpanNumeros + '</ul>';
