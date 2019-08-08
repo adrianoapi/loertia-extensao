@@ -8,20 +8,20 @@
     </head>
     <body>
 
-<section class="container">
-    <div class="dropdown-dark" style="width:100%;">
-        <select name="one" id="select-jogo" class="dropdown-select">
-      <option value="">Selecione uma loteria</option>
-      <option value="1">Lotofacil</option>
-      <option value="3">Lotomania</option>
-      <option value="2">Megasena</option>
-      <option value="4">Quina</option>
-    </select>
-  </div>
-</section>
+    <center><a href="http://www.maniadeganhar.com.br" target="_blank">maniadeganhar.com.br</a></center>
+        <section class="container">
+            <div class="dropdown-dark" style="width:100%;">
+                <select name="one" id="select-jogo" class="dropdown-select">
+                    <option value="">Selecione uma loteria</option>
+                    <option value="1">Lotofacil</option>
+                    <option value="3">Lotomania</option>
+                    <option value="2">Megasena</option>
+                    <option value="4">Quina</option>
+                </select>
+            </div>
+        </section>
         
-        <input type="hidden" name="next_concurso" value="">
-        <input type="hidden" name="prev_concurso" value="">
+        <input type="hidden" name="ultimo_sorteio" value="0">
 
         <div id="loterias-widget">
             <div class="container">			
@@ -81,11 +81,11 @@
             <hr>
             <div id="sorteio" >
                 <div id="data">
-                    <a href="#" class="btn btn-blue"><< ANTERIOR</a>
+                    <a href="#" class="btn btn-blue" id="previous"><< ANTERIOR</a>
                 </div>
                 
                 <div id="num_conc" style="float: right;">
-                    <a href="#" class="btn btn-blue">PRÓXIMO >></a>
+                    <a href="#" class="btn btn-blue" id="next">PRÓXIMO >></a>
                 </div>
             </div>
         </div>

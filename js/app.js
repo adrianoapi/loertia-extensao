@@ -99,6 +99,7 @@ var app = {
             var arrNumeros  = app.converteArray(array['numeros']);
             ultimo_concurso = array['concurso'];
             
+            document.getElementById('numero-concurso').value = ultimo_concurso;
             document.getElementById('numero-concurso').placeholder = ultimo_concurso;
             document.getElementById('header').innerHTML = '<center><img src="img/' + app._jogo_imagem + '"></center>';
 
