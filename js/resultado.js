@@ -35,13 +35,8 @@ var resultado = {
             return obj[this._jogo][numero];
         },
         formatoMoeda: function(numero) {
-            numero = numero.replace(".", "");
-            var tmp = numero+'';
-            tmp = tmp.replace(/([0-9]{2})$/g, ",$1");
-            if( tmp.length > 6 ){
-                tmp = tmp.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
-            }
-            return tmp;
+            arrDecimal = numero.split('.');
+            return numero;
         },
         templateHeader: function(value) {
             return '<p style="font-weight: bold;font-size: 13px; font-family: verdana;">' + value + '</p>';
