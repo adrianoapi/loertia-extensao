@@ -3,6 +3,11 @@ app.url     = "http://www.maniadeganhar.com.br/api/ultimo-resultado";
 
 document.getElementById("select-jogo").addEventListener("click", submitArticle);
 
+document.getElementById("search").addEventListener("click", function(){
+    document.getElementById("flg").value = 1;
+    submitArticle();
+});
+
 document.getElementById("next").addEventListener("click", function(){
     document.getElementById("flg").value = 1;
     var sorteio = document.getElementById("numero-concurso").value;
