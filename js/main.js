@@ -14,6 +14,8 @@ function submitArticle() {
         selectJogo = 2;
     }
     
+    app.jogo_imagem = selectJogo;
+    console.log(app.jogo_imagem);
     
     xhr = library.requisicaoHttp();
     var data = "jogo=" + selectJogo + "&sorteio=" + 2;

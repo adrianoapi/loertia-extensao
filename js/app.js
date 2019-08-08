@@ -8,6 +8,7 @@ var app = {
 	_sorteio: 0,
 	_data_sorteio: '',
 	_url: '',
+	_jogo_imagem: '',
 	get jogo() {
             return this._jogo;
 	},
@@ -33,6 +34,24 @@ var app = {
 	set url(value) {
             this._url = value;
 	},
+        get jogo_imagem() {
+            return this._jogo_imagem;
+        },
+        set jogo_imagem(jogo){
+            switch(jogo) {
+                case '1':
+                    this._jogo_imagem = 'lotofacil.png';
+                    break;
+                case '4':
+                    this._jogo_imagem = 'quina.png';
+                    break;
+                case '3':
+                    this._jogo_imagem = 'lotomania.png';
+                    break;
+                default:
+                    this._jogo_imagem = 'mega-sena.png';
+            }
+        },
         converteArray: function(string)
         {
             var patt = /[0-9]/g;
@@ -60,6 +79,8 @@ var app = {
             document.getElementById('data-sorteio'   ).innerHTML = app.data_sorteio;
             var arrNumeros  = app.converteArray(array['numeros']);
             ultimo_concurso = array['concurso'];
+            
+            document.getElementById('header').innerHTML = '<center><img src="img/' + app._jogo_imagem + '"></center>';
 
             var htmlSpanNumeros = "";
             for(var i = 0; i < arrNumeros.length; i++){
