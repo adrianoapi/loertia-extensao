@@ -46,7 +46,8 @@ function submitArticle() {
                 objArray = JSON.parse(this.responseText);
                 
                 if(objArray.length <= 0){
-                    document.getElementById("numero-concurso").value = 0;
+                    document.getElementById("numero-concurso").value = 1;
+                    submitArticle();
                     return false;
                 }
                 
