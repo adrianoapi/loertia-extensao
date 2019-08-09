@@ -35,8 +35,30 @@ var resultado = {
             return obj[this._jogo][numero];
         },
         formatoMoeda: function(numero) {
-            arrDecimal = numero.split('.');
-            return numero;
+            var array = numero.split('.');
+            var arr   = ('' + array[0]).split('').map(function(digit){return +digit;});
+            var j     = 0;
+            var temp  = '';
+            
+            arr = arr.reverse();
+            for(var i = 0; i <= arr.length; i++){
+                if(j >= 2){
+                    if(!isNaN(arr[i])){
+                        if(i == (arr.length -1)){
+                            temp = "" + arr[i] + temp;
+                        }else{
+                            temp = "." + arr[i] + temp;
+                        }
+                    }
+                    j = 0;
+                }else{
+                    if(!isNaN(arr[i])){
+                        temp = "" + arr[i] + temp;
+                    }
+                    j++;   
+                }
+            }
+            return "R$ " + temp + ',' + array[1];
         },
         templateHeader: function(value) {
             return '<p style="font-weight: bold;font-size: 13px; font-family: verdana;">' + value + '</p>';
