@@ -70,9 +70,9 @@ var resultado = {
             
             this.quantidade(array['jogo_id']);
             
-            var pontos     = this.templateHeader('PONTOS'    );
-            var ganhadores = this.templateHeader('GANHADORES');
-            var premio     = this.templateHeader('PRÊMIO'    );
+            var pontos     = this.templateHeader('PONTOS'      );
+            var ganhadores = this.templateHeader('GANHADORES'  );
+            var premio     = this.templateHeader('PR&Ecirc;MIO');
             
             for(var i = 1; i <= this.contador; i++){
                 pontos     += this.template(this.pontos(i));
