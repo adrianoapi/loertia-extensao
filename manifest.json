@@ -1,20 +1,12 @@
 {
-    "name": "Mania de Ganhar",
-    "version": "1.0",
-    "description": "Aplicativo que traz resultado da loteria Megasena, lotofacil, lotomania e quina. Atualizado diariamente de forma automatizada.",
-    "permissions": ["storage"],
-    "background": {
-      "scripts": ["app.js","library.js","main.js","resultado.js"],
-      "persistent": false
-    },
-    "page_action": {
-      "default_popup": "index.html",
-      "default_icon": {
-        "16": "img/icon16.png",
-        "32": "img/icon32.png",
-        "48": "img/icon48.png",
-        "128": "img/icon128.png"
-      }
-    },
-    "manifest_version": 2
+    "manifest_version": 2,
+    "version": "0.0.1",
+    "name": "Megasena",
+    "description": "Reultado Loteria Megasena, lotofacil, lotomania e quina",
+    "author": "Mania de Ganhar",
+    "browser_action": {
+        "default_title": "Hello World",
+        "default_popup": "index.html",
+        "default_icon": "img/icon128.png"
+    }
 }

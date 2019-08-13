@@ -1,8 +1,9 @@
 <!Doctype html>
 <html>
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta http-equiv="Content-Language" content="pt-br">
         <link type="text/css" rel="stylesheet" href="css/styles.css" />
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
     </head>
@@ -34,11 +35,11 @@
             </div>
             <div id="sorteio" >
                 <div id="data">
-                    <a href="#" id="previous"><< ANTERIOR</a>
+                    <a href="#" id="previous" title="Regredir"><< ANTERIOR</a>
                 </div>
                 
                 <div id="num_conc" style="float: right;">
-                    <a href="#" id="next">PRÓXIMO >></a>
+                    <a href="#" id="next" title="Avançar">PRÓXIMO ></a>
                 </div>
             </div>
             <hr>
@@ -52,7 +53,7 @@
                         <p style="font-weight: bold;font-size: 13px; font-family: verdana;">Nº CONCURSO</p>
                         <div class="row" >
                             <input type="number" value="" min="1"  id="numero-concurso"  class="numConcurso" >
-                            <input type="button" value="Buscar" class="buscar" id="search">
+                            <input type="button" value="Buscar" class="buscar" id="search" title="Buscar">
                         </div>
                     </div>
                 </div>
@@ -60,7 +61,7 @@
             <hr>
             <div class="container">
                 <div id="dezenas">
-                    <img src="img/lazyload.gif">
+                    <img src="img/lazyload.gif" alt="loading...">
                 </div>			
             </div>			
             <hr>

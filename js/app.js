@@ -101,11 +101,11 @@ var app = {
             
             document.getElementById('numero-concurso').value = ultimo_concurso;
             document.getElementById('numero-concurso').placeholder = ultimo_concurso;
-            document.getElementById('header').innerHTML = '<center><img src="img/' + app._jogo_imagem + '"></center>';
+            document.getElementById('header').innerHTML = '<center><img src="img/' + app._jogo_imagem + '" alt="' + app._jogo_imagem + '"></center>';
 
             var htmlSpanNumeros = "";
             for(var i = 0; i < arrNumeros.length; i++){
-                htmlSpanNumeros += '<li class="example-item example-megasena zoom zoom-' + app.jogo_cor + '">' + arrNumeros[i] + '</li>';
+                htmlSpanNumeros += '<li class="example-item example-megasena zoom zoom-' + app.jogo_cor + '" title="' + arrNumeros[i] + '" >' + arrNumeros[i] + '</li>';
             }
 
             htmlSpanNumeros = '<ul class="example-mega">' + htmlSpanNumeros + '</ul>';
