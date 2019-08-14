@@ -1,11 +1,11 @@
 {
     "manifest_version": 2,
-    "version": "0.0.1",
+    "version": "0.0.3",
     "name": "Megasena",
     "description": "Reultado Loteria Megasena, lotofacil, lotomania e quina",
     "author": "Mania de Ganhar",
     "browser_action": {
-        "default_title": "Hello World",
+        "default_title": "Megasena",
         "default_popup": "index.html",
         "default_icon": "img/icon128.png"
     }

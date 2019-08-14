@@ -3,6 +3,17 @@
     min-height: 430px;
 }
 
+#site {
+  background-color: transparent;
+  border: 0;
+  color: #0066ff;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0;
+  position: relative;
+  text-decoration: underline;
+}
+
 #header{width: 100%;}
 #sorteio{
     width: 100%;

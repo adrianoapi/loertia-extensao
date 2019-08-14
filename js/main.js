@@ -1,26 +1,29 @@
 
-app.url     = "http://www.maniadeganhar.com.br/api/ultimo-resultado";
+app.url     = "https://www.maniadeganhar.com.br/api/ultimo-resultado";
 
 document.getElementById("select-jogo").addEventListener("click", submitArticle);
+document.getElementById("search"     ).addEventListener("click", btnSearch    );
+document.getElementById("next"       ).addEventListener("click", btnNext      );
+document.getElementById("previous"   ).addEventListener("click", btnPrevious  );
 
-document.getElementById("search").addEventListener("click", function(){
+function btnSearch() {
     document.getElementById("flg").value = 1;
     submitArticle();
-});
+}
 
-document.getElementById("next").addEventListener("click", function(){
+function btnNext() {
     document.getElementById("flg").value = 1;
     var sorteio = document.getElementById("numero-concurso").value;
     document.getElementById("numero-concurso").value = parseInt(sorteio) + 1;
     submitArticle();
-});
+}
 
-document.getElementById("previous").addEventListener("click", function(){
+function btnPrevious() {
     document.getElementById("flg").value = 1;
     var sorteio = document.getElementById("numero-concurso").value;
     document.getElementById("numero-concurso").value = parseInt(sorteio) - 1;
     submitArticle();
-});
+}
 
 submitArticle();
 function submitArticle() {
